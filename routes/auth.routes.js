@@ -19,7 +19,7 @@ router.get('/login', (req, res, next) => {
 })
 
 router.get('/login', (req, res, next) => {
-  res.redirect('auth/login');
+  res.redirect('index');
 })
 
 router.post('/logout', (req, res, next) => {
