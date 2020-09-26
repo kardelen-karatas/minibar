@@ -11,7 +11,23 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', (req, res, next) => {
-  res.redirect('auth/signup');
+  console.log('The form data: ', req.body);
+
+  const { username, email, password } = req.body;
+ 
+  const hashedPassword = bcryptjs.hashSync(password, salt);
+  console.log(`Password hash: ${hashedPassword}`);
+
+  User.create({
+    username,
+    email,
+    passwordHash: hashedPassword
+  })
+    .then(userFromDB => {
+      console.log('Newly created user is: ', userFromDB);
+      res.redirect('/userProfile');
+    })
+    .catch(error => next(error));
 });
 
 router.get('/login', (req, res, next) => {
