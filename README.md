@@ -1,3 +1,3 @@
-#Ironhack Project - 2
+# Ironhack Project - 2
 
-by Clementine Nocton and Kardelen Karatas  
+by Clementine Nocton & Kardelen Karatas  
