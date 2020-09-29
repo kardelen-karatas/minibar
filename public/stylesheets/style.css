@@ -43,4 +43,23 @@ nav {
       border: 0.5px solid grey;
       height: 32px; }
 
+#login {
+  display: flex; }
+  #login .left {
+    width: 30vw;
+    height: 100%; }
+    #login .left form {
+      margin: 200px auto; }
+      #login .left form label, #login .left form button, #login .left form input {
+        display: flex;
+        justify-content: center;
+        margin: 16px auto; }
+      #login .left form input {
+        height: 32px; }
+  #login .right {
+    width: 70vw;
+    height: 100%; }
+    #login .right img {
+      width: 100%; }
+
 /*# sourceMappingURL=style.css.map */

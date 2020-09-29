@@ -65,3 +65,37 @@ nav {
     }
   }
 }
+
+#login {
+  display: flex;
+
+  .left {
+    width: 30vw;
+    height: 100%;
+
+    form {
+      margin: 200px auto;
+
+      label, button, input {
+        display: flex;
+        justify-content: center;
+        margin: 16px auto;
+
+      }
+
+      input {
+        // border: 0.5px solid grey;
+        height: 32px;
+      }
+    }
+  }
+
+  .right {
+    width: 70vw;
+    height: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+}

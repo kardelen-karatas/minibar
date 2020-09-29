@@ -1,25 +1,26 @@
+<div id="login">
+  <div class="left">
+    <form action="/login" method="POST">
 
-<div id="login-page">
-
-  <h2>Login</h2>
-
-  <form action="/login" method="POST">
-
-    <label for="input-name">Name</label>
-    <input type="text" id="input-name" name="email" placeholder="Your name" />
+      <label for="input-name"></label>
+      <input type="text" id="input-name" name="email" placeholder="Pseudo" />
 
 
-    <label for="input-email">Email</label>
-    <input type="email" id="input-email" name="email" placeholder="Your email" />
+      <label for="input-email"></label>
+      <input type="email" id="input-email" name="email" placeholder="Email" />
 
-    <label for="input-password">Password</label>
-    <input type="password" name="password" id="input-password" placeholder="********" />
+      <label for="input-password"></label>
+      <input type="password" name="password" id="input-password" placeholder="********" />
 
-    <button type="submit">Login</button>
+      <button type="submit" class="btn btn-light">Login</button>
 
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
+      {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+      {{/if}}
 
-  </form>
+    </form>
+  </div>
+  <div class="right">
+    <img src="https://images.unsplash.com/photo-1468056961052-15507578a50d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1267&q=80" alt="">
+  </div>
 </div>
