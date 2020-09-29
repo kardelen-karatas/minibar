@@ -9,6 +9,8 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
+hbs.registerPartials(__dirname + "/views/shared");
+
 
 mongoose
   .connect('mongodb://localhost/minibar', {useNewUrlParser: true})

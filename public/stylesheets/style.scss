@@ -1,8 +1,29 @@
 body {
-  padding: 50px;
+  // padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+
+.logo {
+  border-radius: 50%;
+}
+
+nav {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  background-color: antiquewhite;
+  
+  ul {
+    display: flex;
+    margin: 0;
+    
+    li {
+      list-style: none;
+      margin: 8px;
+    }
+  }
 }
