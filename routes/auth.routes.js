@@ -18,13 +18,16 @@ router.post('/signup', (req, res, next) => {
   const hashedPassword = bcryptjs.hashSync(password, salt);
   console.log(`Password hash: ${hashedPassword}`);
 
-  User.create({
+  userToCreate = {
     username,
     email,
     passwordHash: hashedPassword
-  })
+  }
+
+  User.create(userToCreate)
     .then(userFromDB => {
       console.log('Newly created user is: ', userFromDB);
+      req.session.currentUser = userFromDB;
       res.redirect('/userProfile');
     })
     .catch(error => next(error));
