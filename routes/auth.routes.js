@@ -1,4 +1,6 @@
 const express = require('express');
+const mongoose = require('mongoose');
+
 const bcryptjs = require('bcryptjs');
 const salt = bcryptjs.genSaltSync(10);
 
@@ -11,23 +13,40 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', (req, res, next) => {
-  console.log('The form data: ', req.body);
-
+  
   const { username, email, password } = req.body;
+
+  if (!username || !email || !password) {
+    res.render('auth/signup', { errorMessage: 'All fields are mandatory. Please provide your username, email and password.' });
+    return;
+  }
  
   const hashedPassword = bcryptjs.hashSync(password, salt);
-  console.log(`Password hash: ${hashedPassword}`);
-
+  
   User.create({
     username,
     email,
     passwordHash: hashedPassword
   })
     .then(userFromDB => {
-      console.log('Newly created user is: ', userFromDB);
+
+      req.session.currentUser = userFromDB;
       res.redirect('/userProfile');
+    
     })
-    .catch(error => next(error));
+    .catch(error => {
+      if (error instanceof mongoose.Error.ValidationError) {
+          res.status(500).render('auth/signup', { errorMessage: error.message });
+      } 
+      else if (error.code === 11000) {
+        res.status(500).render('auth/signup', {
+           errorMessage: 'Username and email need to be unique. Either username or email is already used.'
+        });
+      } 
+      else {
+          next(error);
+      }
+    });
 });
 
 router.get('/login', (req, res, next) => {
@@ -37,8 +56,6 @@ router.get('/login', (req, res, next) => {
 
 router.post('/login', (req, res, next) => {
   const { name, email, password } = req.body;
-
-  console.log('SESSION =====> ', req.session);
  
   if (name === '' || email === '' || password === '') {
     res.render('auth/login', {
