@@ -1,23 +1,28 @@
 <div class="signup">
-    <form action="/signup" method="POST">
-        <label for="username">
-            Username
-            <input type="text" name="username">
-        </label>
+    <div class="left"></div>
+    <div class="right">
+        <a href="#" class="btn btn-primary mt-4">Sign up with Facebook</a>
+        <a href="#" class="btn btn-primary mt-4">Sign up with Google</a>
+        <form action="/signup" method="POST">
+            <label for="username">
+                {{!-- Username --}}
+                <input type="text" name="username" placeholder="Pseudo">
+            </label>
 
-        <label for="email">
-            Email
-            <input type="email" name="email">
-        </label>
+            <label for="email">
+                {{!-- Email --}}
+                <input type="email" name="email" placeholder="Email">
+            </label>
 
-        <label for="password">
-            Password
-            <input type="password" name="password">
-        </label>
+            <label for="password">
+                {{!-- Password --}}
+                <input type="password" name="password" placeholder="Mot de passe">
+            </label>
 
-        <button>Sign in</button>
-    </form>
-    {{#if errorMessage}}
-        <p>{{errorMessage}}</p>
-    {{/if}}
+            <button class="btn btn-light">Sign in</button>
+        </form>
+        {{#if errorMessage}}
+            <p>{{errorMessage}}</p>
+        {{/if}}
+    </div>
 </div>

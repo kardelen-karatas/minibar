@@ -1,8 +1,46 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00B7FF; }
+
+.logo {
+  border-radius: 50%; }
+
+nav {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  background-color: antiquewhite; }
+  nav ul {
+    display: flex;
+    margin: 0; }
+    nav ul li {
+      list-style: none;
+      margin: 8px; }
+
+.signup {
+  width: 80vw;
+  height: 80vh;
+  margin: 50px auto;
+  background: url("https://images.unsplash.com/photo-1525268323446-0505b6fe7778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80");
+  background-repeat: cover;
+  display: flex;
+  border-radius: 10px;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.25); }
+  .signup .right, .signup .left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+  .signup .right form label, .signup .right form button {
+    display: flex;
+    justify-content: center;
+    margin: 16px auto; }
+    .signup .right form label input, .signup .right form button input {
+      border: 0.5px solid grey;
+      height: 32px; }
 
 /*# sourceMappingURL=style.css.map */
