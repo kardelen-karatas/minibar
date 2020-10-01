@@ -18,6 +18,7 @@ router.post('/bars', (req, res, next) => {
     res.render('bars/new', {})
   })  
 
+//CLEMENTINE 
   router.get('/bars/:id', (req, res, next) => {
   res.send(`details for bar ID : ${req.params.id}`)
 })
@@ -29,7 +30,6 @@ router.post('/bars/:id', (req, res, next) => {
 router.post('/bars/:id/delete', (req, res, next) => {
     // Delete bar
 })
-
 
 router.get('/bars/:id/edit', (req, res, next) => {
   res.send(`editing bar ID : ${req.params.id}`)

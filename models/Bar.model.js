@@ -12,7 +12,7 @@ const barSchema = new Schema(
       type: String,
       required: [true, 'Address is required.']
     },
-    minimum_cb: {
+    minimumCb: {
       type: Number,
       required: [true, 'Minimum value is required.'],
       min: 0,
