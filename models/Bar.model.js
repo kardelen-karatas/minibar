@@ -18,7 +18,8 @@ const barSchema = new Schema(
       min: 0,
       max: 40
     },
-    latlng: [Number]
+    latlng: [Number],
+    imageURL: String
   },
   {
     timestamps: true,

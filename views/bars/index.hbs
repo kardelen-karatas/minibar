@@ -1,0 +1,16 @@
+<h2>Bars</h2>
+
+<a href="/bars/new">Add a movie</a>
+
+<ul>
+  {{#each bars}}
+    <li>
+      {{!-- <a href="/bars/{{id}}">{{title}}</a> --}}
+      ‒
+      {{!-- <a href="/movies/{{id}}/edit">Edit</a> --}}
+      {{!-- <form action="/movies/{{id}}/delete" method="POST">
+        <button>Delete</button>
+      </form> --}}
+    </li>
+  {{/each}}
+</ul>
