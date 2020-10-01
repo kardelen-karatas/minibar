@@ -13,5 +13,15 @@
   {{> header}}
   {{{body}}}
   <script src="/javascripts/script.js"></script>
+  <script>
+    const header = document.querySelector('nav');
+    if ((window.location.href).includes('/signup')) {
+      header.style.display = 'none';
+    } else if ((window.location.href).includes('/login')) {
+      header.style.display = 'none';
+    } else {
+      header.style.display = 'flex';
+    }
+  </script>
 </body>
 </html>

@@ -1,28 +1,30 @@
-<div class="signup">
-    <div class="left"></div>
-    <div class="right">
-        <a href="#" class="btn btn-primary mt-4">Sign up with Facebook</a>
-        <a href="#" class="btn btn-primary mt-4">Sign up with Google</a>
-        <form action="/signup" method="POST">
-            <label for="username">
-                {{!-- Username --}}
-                <input type="text" name="username" placeholder="Pseudo">
-            </label>
+<section id="signup" class="side-spacing content">
+  <div class="left"></div>
+  <div class="right">
+      <a href="#" class="btn btn-primary mt-4">Sign up with Facebook</a>
+      <a href="#" class="btn btn-primary mt-4">Sign up with Google</a>
+      <form action="/signup" method="POST">
+          <label for="username">
+              {{!-- Username --}}
+              <input type="text" name="username" placeholder="Pseudo">
+          </label>
 
-            <label for="email">
-                {{!-- Email --}}
-                <input type="email" name="email" placeholder="Email">
-            </label>
+          <label for="email">
+              {{!-- Email --}}
+              <input type="email" name="email" placeholder="Email">
+          </label>
 
-            <label for="password">
-                {{!-- Password --}}
-                <input type="password" name="password" placeholder="Mot de passe">
-            </label>
+          <label for="password">
+              {{!-- Password --}}
+              <input type="password" name="password" placeholder="Mot de passe">
+          </label>
 
-            <button class="btn btn-light">Sign in</button>
-        </form>
-        {{#if errorMessage}}
-            <p>{{errorMessage}}</p>
-        {{/if}}
-    </div>
-</div>
+          <button class="btn btn-light">Sign in</button>
+      </form>
+      OR
+      <a href="/login" class="btn btn-primary">Log in</a>
+      {{#if errorMessage}}
+          <p>{{errorMessage}}</p>
+      {{/if}}
+  </div>
+</section>
