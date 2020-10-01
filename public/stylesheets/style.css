@@ -51,13 +51,14 @@ nav {
         height: 100%; } }
   #signup .right form label, #signup .right form button {
     display: flex;
-    justify-content: center;
-    margin: 16px auto; }
+    justify-content: center; }
     #signup .right form label input, #signup .right form button input {
       border: none;
       height: 32px;
       border-radius: 5px;
       box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5); }
+  #signup .right form label {
+    margin: 16px auto; }
 
 #login {
   display: flex; }
@@ -66,10 +67,13 @@ nav {
     height: auto; }
     #login .left form {
       margin: 200px auto; }
-      #login .left form label, #login .left form button, #login .left form input {
+      #login .left form label, #login .left form input {
         display: flex;
         justify-content: center;
         margin: 16px auto; }
+      #login .left form button {
+        display: flex;
+        justify-content: center; }
       #login .left form input {
         height: 32px; }
   #login .right {
@@ -77,5 +81,11 @@ nav {
     height: 100%; }
     #login .right img {
       width: 100%; }
+
+.buttons {
+  display: flex;
+  justify-content: center; }
+  .buttons p {
+    margin: 8px; }
 
 /*# sourceMappingURL=style.css.map */

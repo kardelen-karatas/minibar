@@ -19,10 +19,11 @@
               <input type="password" name="password" placeholder="Mot de passe">
           </label>
 
-          <button class="btn btn-light">Sign in</button>
-      </form>
-      OR
-      <a href="/login" class="btn btn-primary">Log in</a>
+          <div class="buttons">
+            <button type="submit" class="btn btn-success">Sign in</button>
+            <p>OR</p>
+            <a href="/login" class="btn btn-light">Log in</a>
+          </div>
       {{#if errorMessage}}
           <p>{{errorMessage}}</p>
       {{/if}}
