@@ -1,0 +1,18 @@
+<h2>Bars</h2>
+{{#if userInSession}}
+<a href="/bars/new">Add a bar</a>
+{{/if}}
+
+<section id="bar-index">
+  <div class="bars">
+    {{#each bars}}
+      <div class="bar">
+        <h3>{{name}}</h3>
+        <p>{{address}}</p>
+        <p>{{minimumCb}}€</p>
+        <p>Creator : {{user_id}}</p>
+        <a href="/bars/{{id}}">See more</a>
+      </div>
+    {{/each}}
+  </div>
+</section>

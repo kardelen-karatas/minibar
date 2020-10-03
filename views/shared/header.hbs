@@ -1,14 +1,14 @@
   <nav>
-    <img src="./images/minibar.gif" alt="Logo" width="30" class="logo m-2">
+    <a href="/bars"><img src="https://via.placeholder.com/30" alt="" class="logo m-2"></a>
     {{#if userInSession}}
-      <ul>
-        <li><a href="/bars/new">Add a bar</a></li>
-      </ul>
+      <a href="/userProfile">My account</a>
+      <form id="logout-form" action="/logout" method="POST">
+        <button>Logout</button>
+      </form>
     {{else}}
-      <ul>
-        <li><a href="/signup">Sign up</a></li>
-        <li><a href="/login">Log in</a></li>
-        <li><a href="/login">Add a bar</a></li>
-      </ul>
+    <ul>
+      <li><a href="/signup">Sign up</a></li>
+      <li><a href="/login">Log in</a></li>
+    </ul>
     {{/if}}
   </nav>
