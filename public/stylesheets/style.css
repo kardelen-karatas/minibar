@@ -49,6 +49,11 @@ nav {
       #signup .right, #signup .left {
         width: 50%;
         height: 100%; } }
+  #signup .left a {
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+    padding-top: 50px; }
   #signup .right form label, #signup .right form button {
     display: flex;
     justify-content: center; }
@@ -59,6 +64,8 @@ nav {
       box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5); }
   #signup .right form label {
     margin: 16px auto; }
+  #signup .right p {
+    color: white; }
 
 #login {
   display: flex; }
@@ -76,6 +83,12 @@ nav {
         justify-content: center; }
       #login .left form input {
         height: 32px; }
+    #login .left p.a {
+      text-decoration: none;
+      padding-left: 20px;
+      padding-top: 50px; }
+    #login .left a {
+      color: #060606; }
   #login .right {
     width: 70vw;
     height: 100%; }
