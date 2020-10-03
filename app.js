@@ -11,9 +11,8 @@ const path         = require('path');
 
 hbs.registerPartials(__dirname + "/views/shared");
 
-
 mongoose
-  .connect('mongodb://localhost/minibar', {useNewUrlParser: true})
+  .connect(process.env.MONGODB_URI, {useNewUrlParser: true})
   .then(x => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`)
   })
