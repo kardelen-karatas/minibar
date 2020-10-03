@@ -3,7 +3,13 @@ const Bar = require('../models/Bar.model');
 const User = require('../models/User.model');
  
 const dbtitle = 'minibar';
-mongoose.connect(`mongodb://localhost/${dbtitle}`, {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(`mongodb://localhost/${dbtitle}`, {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true})
+  .then( db => {
+  console.log(`connected to ${db}`)
+})
+  .catch(err => {
+  console.log(`Connexion problem: ${err}`)
+});
 
 
 Bar.collection.drop();
@@ -16,7 +22,6 @@ User.find()
   // t: 2
   for (let user of users) {
     user_list.push(user["_id"])
-    console.log(user["_id"])
   }
 
   const dataBar = [
