@@ -1,0 +1,25 @@
+<h2>Edit the bar: {{bar.name}}</h2>
+
+<form action="/bars/{{bar.id}}/edit" method="POST">
+  <label>
+    Name:
+    <input type="text" name="name" value="{{bar.name}}" />
+  </label>
+  
+  <label>
+    Address:
+    <input type="text" name="address" value="{{bar.address}}" />
+  </label>
+
+  <label>
+    Minimum CB:
+    <input type="number" name="minimumCb" value="{{bar.minimumCb}}">
+  </label>
+
+    <label>
+    Longitude Latitude:
+    <input type="number" name="latlng" value="{{bar.latlng}}">
+  </label>
+
+  <button>Save changes</button>
+</form>

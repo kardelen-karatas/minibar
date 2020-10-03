@@ -6,37 +6,99 @@ module.exports = router;
 
 const Bar = require('../models/Bar.model.js');
 
-router.get('/', (req, res, next) => {
-  res.render('bars/index', {})
-})
 
-router.post('/bars', (req, res, next) => {
+router.get('/bars/new', (req, res, next) => {
+
+  if(!req.session.currentUser){
+    res.redirect('/login')
+  }
+  res.render('bars/new', { userInSession: req.session.currentUser });
+});
+
+router.post('/bars/new', (req, res, next) => {
   // creation d'un bar
+  const { name, address, minimumCb } = req.body;
+
+  Bar.create({ name, address, minimumCb })
+    .then((newBar) => {
+      res.redirect('/bars');
+    })
+    .catch((err) => {
+      next(err);
+    });
+});
+
+router.get('/bars', (req, res, next) => {
+  Bar.find()
+  .then((allBarsFromDB) => {
+    res.render("bars/index", { bars : allBarsFromDB, userInSession: req.session.currentUser });
   })
+  .catch((error) => {
+    console.log("Error while getting the bars from the DB: ", error);
+    next(error);
+  });
+});
 
-  router.get('/bars/new', (req, res, next) => {
-    res.render('bars/new', {})
-  })  
-
-//CLEMENTINE 
   router.get('/bars/:id', (req, res, next) => {
-  res.send(`details for bar ID : ${req.params.id}`)
-})
+  const { id } = req.params;
 
-router.post('/bars/:id', (req, res, next) => {
-    // Update bar  
-})
+  // check if the logged in user is creator of the bar
+  function isCreator(bar){
+    if(req.session.currentUser && bar.user_id.toString() === req.session.currentUser._id){
+      return true
+    }
+    return false
+  }
 
-router.post('/bars/:id/delete', (req, res, next) => {
-    // Delete bar
-})
+  Bar.findById(id)
+    .then((theBar) => {
+    
+      res.render("bars/show", { bar: theBar, userInSession: req.session.currentUser, isCreator: isCreator(theBar)})
+    
+    })
+    .catch((error) => {
+      console.log("Error while retrieving bar details: ", error);
+      next(error);
+    });
+});
 
 router.get('/bars/:id/edit', (req, res, next) => {
-  res.send(`editing bar ID : ${req.params.id}`)
-})
 
+  const { id } = req.params;
 
+  if(!req.session.currentUser){
+    res.redirect('/login')
+  }
 
+  Bar.findById(id)
+  .then(barToEdit => {
 
+    if(barToEdit.user_id.toString() !== req.session.currentUser._id){
+      res.redirect(`/bars/${barToEdit.id}`)
+    }
 
+    res.render('bars/edit', {bar: barToEdit, userInSession: req.session.currentUser});
+  })
+  .catch(error => next(error));
 
+});
+
+router.post('/bars/:id/edit', (req, res, next) => {
+    
+  const { id } = req.params;
+  const { name, address, minimumCb } = req.body;
+
+  console.log(typeof(minimumCb))
+   
+  Bar.findByIdAndUpdate(id, { name, address, minimumCb }, { new: true })
+    .then(updatedBar => res.redirect(`/bars/${updatedBar.id}`))
+    .catch(error => next(error));
+});
+
+router.post('/bars/:id/delete', (req, res, next) => {
+  Bar.findByIdAndDelete(req.params.id)
+  .then(() => {
+    res.redirect('/bars');
+  })
+  .catch((err) => next(err));
+});

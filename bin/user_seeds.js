@@ -4,7 +4,13 @@ const User = require('../models/User.model');
 User.collection.drop();
  
 const dbtitle = 'minibar';
-mongoose.connect(`mongodb://localhost/${dbtitle}`, {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(`mongodb://localhost/${dbtitle}`, {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true})
+  .then( db => {
+    console.log(`connected to mongo ${db}`)
+  })
+  .catch(err => {
+    console.log(`Connexion problem: ${err}`)
+  });
 
 const bcryptjs = require('bcryptjs');
 const salt = bcryptjs.genSaltSync(10);
