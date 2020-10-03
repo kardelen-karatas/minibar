@@ -1,0 +1,26 @@
+.btn-green {
+  background-color: #34fbcb !important;
+  border-color: #34fbcb !important;
+
+  &:hover {
+    background-color: #cdfef3 !important;
+  }
+}
+
+.btn-green-light {
+  background-color: #cdfef3 !important;
+  border-color: #cdfef3 !important;
+
+  &:hover {
+    background-color: #34fbcb !important;
+  }
+}
+
+.buttons-signup, .buttons-login {
+  display: flex;
+  justify-content: center;
+
+  p {
+    margin: 8px;
+  }
+}

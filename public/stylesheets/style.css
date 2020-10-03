@@ -1,29 +1,48 @@
-body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
+.btn-green {
+  background-color: #34fbcb !important;
+  border-color: #34fbcb !important; }
+  .btn-green:hover {
+    background-color: #cdfef3 !important; }
 
-a {
-  color: #00B7FF; }
+.btn-green-light {
+  background-color: #cdfef3 !important;
+  border-color: #cdfef3 !important; }
+  .btn-green-light:hover {
+    background-color: #34fbcb !important; }
 
-.logo {
-  border-radius: 50%; }
-
-nav {
+.buttons-signup, .buttons-login {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: antiquewhite; }
-  nav ul {
-    display: flex;
-    margin: 0; }
-    nav ul li {
-      list-style: none;
-      margin: 8px; }
+  justify-content: center; }
+  .buttons-signup p, .buttons-login p {
+    margin: 8px; }
 
-.side-spacing {
-  margin: 0 auto; }
-  @media (min-width: 768px) {
-    .side-spacing {
-      margin: 0 50px; } }
+#login {
+  display: flex; }
+  #login .left {
+    width: 30vw;
+    height: auto; }
+    #login .left form {
+      margin: 200px auto; }
+      #login .left form label, #login .left form input {
+        display: flex;
+        justify-content: center;
+        margin: 16px auto; }
+      #login .left form button {
+        display: flex;
+        justify-content: center; }
+      #login .left form input {
+        height: 32px; }
+    #login .left p.a {
+      text-decoration: none;
+      padding-left: 20px;
+      padding-top: 50px; }
+    #login .left a {
+      color: #060606; }
+  #login .right {
+    width: 70vw;
+    height: 100%; }
+    #login .right img {
+      width: 100%; }
 
 #signup {
   width: 80vw;
@@ -67,39 +86,81 @@ nav {
   #signup .right p {
     color: white; }
 
-#login {
-  display: flex; }
-  #login .left {
-    width: 30vw;
-    height: auto; }
-    #login .left form {
-      margin: 200px auto; }
-      #login .left form label, #login .left form input {
-        display: flex;
-        justify-content: center;
-        margin: 16px auto; }
-      #login .left form button {
-        display: flex;
-        justify-content: center; }
-      #login .left form input {
-        height: 32px; }
-    #login .left p.a {
-      text-decoration: none;
-      padding-left: 20px;
-      padding-top: 50px; }
-    #login .left a {
-      color: #060606; }
-  #login .right {
-    width: 70vw;
-    height: 100%; }
-    #login .right img {
-      width: 100%; }
-
-.buttons {
+nav {
   display: flex;
-  justify-content: center; }
-  .buttons p {
-    margin: 8px; }
+  align-items: center;
+  justify-content: space-between;
+  background-color: #cdfef3; }
+  nav ul {
+    display: flex;
+    margin: 0; }
+    nav ul li {
+      list-style: none;
+      margin: 8px; }
+
+#profile .profile-card {
+  width: 80vw;
+  margin: 104px auto;
+  height: 40vh;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  #profile .profile-card .id {
+    position: absolute; }
+    #profile .profile-card .id img {
+      width: 88px;
+      position: relative;
+      box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+      top: -64px; }
+    #profile .profile-card .id h2 {
+      font-weight: 800; }
+
+#unregistered {
+  width: 80vw;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+  margin: 50px auto;
+  background-color: #292c2d; }
+  #unregistered p {
+    font-weight: 800;
+    padding: 32px;
+    font-size: 28px;
+    text-align: center;
+    color: white; }
+  #unregistered .links {
+    padding: 32px;
+    display: flex;
+    justify-content: space-between; }
+  @media (min-width: 768px) {
+    #unregistered {
+      width: 40vw;
+      height: 40vh; }
+      #unregistered .links {
+        justify-content: space-around; } }
+
+.logo {
+  border-radius: 50%; }
+
+.avatar {
+  border-radius: 50%; }
+
+body {
+  font: 14px 'Raleway', Helvetica, Arial, sans-serif !important; }
+
+a {
+  color: black !important; }
+
+.side-spacing {
+  margin: 0 auto; }
+  @media (min-width: 768px) {
+    .side-spacing {
+      margin: 0 50px; } }
 
 #bar-index {
   display: flex;
