@@ -1,7 +1,14 @@
   <nav>
-    <img src="https://via.placeholder.com/30" alt="" class="logo m-2">
-    <ul>
-      <li><a href="/signup">Sign up</a></li>
-      <li><a href="/login">Log in</a></li>
-    </ul>
+    <img src="./images/minibar.gif" alt="Logo" width="30" class="logo m-2">
+    {{#if userInSession}}
+      <ul>
+        <li><a href="/bars/new">Add a bar</a></li>
+      </ul>
+    {{else}}
+      <ul>
+        <li><a href="/signup">Sign up</a></li>
+        <li><a href="/login">Log in</a></li>
+        <li><a href="/login">Add a bar</a></li>
+      </ul>
+    {{/if}}
   </nav>

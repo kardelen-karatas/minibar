@@ -1,23 +1,35 @@
-<div class="signup">
-    <form action="/signup" method="POST">
-        <label for="username">
-            Username
-            <input type="text" name="username">
-        </label>
+<section id="signup" class="side-spacing content">
+  <div class="left">
 
-        <label for="email">
-            Email
-            <input type="email" name="email">
-        </label>
+    <p><a href="/">Homepage</a></p>
 
-        <label for="password">
-            Password
-            <input type="password" name="password">
-        </label>
+  </div>
+  <div class="right">
+      <a href="#" class="btn btn-primary mt-4">Sign up with Facebook</a>
+      <a href="#" class="btn btn-primary mt-4">Sign up with Google</a>
+      <form action="/signup" method="POST">
+          <label for="username">
+              {{!-- Username --}}
+              <input type="text" name="username" placeholder="Pseudo">
+          </label>
 
-        <button>Sign in</button>
-    </form>
-    {{#if errorMessage}}
-        <p>{{errorMessage}}</p>
-    {{/if}}
-</div>
+          <label for="email">
+              {{!-- Email --}}
+              <input type="email" name="email" placeholder="Email">
+          </label>
+
+          <label for="password">
+              {{!-- Password --}}
+              <input type="password" name="password" placeholder="Mot de passe">
+          </label>
+
+          <div class="buttons">
+            <button type="submit" class="btn btn-success">Sign in</button>
+            <p>OR</p>
+            <a href="/login" class="btn btn-light">Log in</a>
+          </div>
+      {{#if errorMessage}}
+          <p class="error">{{errorMessage}}</p>
+      {{/if}}
+  </div>
+</section>

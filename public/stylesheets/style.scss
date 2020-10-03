@@ -1,3 +1,22 @@
+@mixin breakpoint($breakpoint, $direction) {
+  $breakpoint-value: map-get($breakpoints, $breakpoint);
+  @if ($direction == max) {
+      @media (max-width: ($breakpoint-value - 1)) {
+          @content;
+      }
+  }
+  @if ($direction == min) {
+      @media (min-width: ($breakpoint-value)) {
+        @content;
+      }
+  }
+}
+
+$breakpoints: (
+  mobile: 768px,
+  between: 1280px
+);
+
 body {
   // padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -12,7 +31,7 @@ a {
 }
 
 nav {
-  display: flex !important;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: antiquewhite;
@@ -25,5 +44,137 @@ nav {
       list-style: none;
       margin: 8px;
     }
+  }
+}
+
+.side-spacing {
+  margin: 0 auto;
+
+  @include breakpoint(mobile, min) {
+    margin: 0 50px;
+  }
+}
+
+#signup {
+  width: 80vw;
+  height: 70vh;
+  background: url('https://images.unsplash.com/photo-1525268323446-0505b6fe7778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80');
+  background-repeat: cover;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+
+  .left {
+    width: 0%;
+  }
+
+  .right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  @include breakpoint(mobile, min) {
+    height: 80vh;
+    margin: 50px auto;
+
+    .right, .left {
+      width: 50%;
+      height: 100%;
+    }
+  }
+
+  .left{
+    a{
+      text-decoration: none;
+      color: white;
+      padding-left: 20px;
+      padding-top: 50px;
+    }
+  }
+
+  .right {
+    form {
+      label, button {
+        display: flex;
+        justify-content: center;
+
+        input {
+          border: none;
+          height: 32px;
+          border-radius: 5px;
+          box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+        }
+      }
+
+      label {
+        margin: 16px auto;
+      }
+    }
+
+    p{
+      color: rgb(255, 255, 255)
+    }
+  }
+
+
+}
+
+#login {
+  display: flex;
+
+  .left {
+    width: 30vw;
+    height: auto;
+
+    form {
+      margin: 200px auto;
+
+      label, input {
+        display: flex;
+        justify-content: center;
+        margin: 16px auto;
+
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
+      }
+
+      input {
+        height: 32px;
+      }
+    }
+    
+    p.a{
+      text-decoration: none;
+      padding-left: 20px;
+      padding-top: 50px;
+    }
+    a{
+      color: #060606;
+    }
+  }
+
+  .right {
+    width: 70vw;
+    height: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+
+  p {
+    margin: 8px;
   }
 }
