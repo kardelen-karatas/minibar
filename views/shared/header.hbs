@@ -1,7 +1,14 @@
   <nav>
-    <img src="https://via.placeholder.com/30" alt="" class="logo m-2">
+    <a href="/bars"><img src="https://via.placeholder.com/30" alt="" class="logo m-2"></a>
+    {{#if userInSession}}
+      <a href="/userProfile">My account</a>
+      <form id="logout-form" action="/logout" method="POST">
+        <button>Logout</button>
+      </form>
+    {{else}}
     <ul>
       <li><a href="/signup">Sign up</a></li>
       <li><a href="/login">Log in</a></li>
     </ul>
+    {{/if}}
   </nav>

@@ -19,4 +19,13 @@ nav {
       list-style: none;
       margin: 8px; }
 
+#bar-index {
+  display: flex;
+  flex-wrap: wrap; }
+  #bar-index .bar {
+    width: fit-content;
+    padding: 24px;
+    border: solid 1px black;
+    margin: 24px; }
+
 /*# sourceMappingURL=style.css.map */
