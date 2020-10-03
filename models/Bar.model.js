@@ -15,8 +15,8 @@ const barSchema = new Schema(
     minimumCb: {
       type: Number,
       required: [true, 'Minimum value is required.'],
-      min: 0,
-      max: 40
+      min: [0, 'Minimum payment by cart cannot be at less than 0'],
+      max: [40, 'Minimum payment by cart cannot be at more than 40']
     },
     latlng: [Number],
     imageURL: String
