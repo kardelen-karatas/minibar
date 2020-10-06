@@ -41,7 +41,8 @@ router.post('/bars/new', (req, res, next) => {
 });
 
 router.get('/bars', (req, res, next) => {
-  Bar.find(req.query)
+  console.log(`/${req.query.name}/`);
+  Bar.find({ name: {$regex: req.query.name} } && { address: {$regex: req.query.name} })
   .then((allBarsFromDB) => {
     res.render("bars/index", { bars : allBarsFromDB, userInSession: req.session.currentUser });
   })
