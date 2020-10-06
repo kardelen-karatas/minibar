@@ -41,7 +41,7 @@ router.post('/bars/new', (req, res, next) => {
 });
 
 router.get('/bars', (req, res, next) => {
-  Bar.find()
+  Bar.find(req.query)
   .then((allBarsFromDB) => {
     res.render("bars/index", { bars : allBarsFromDB, userInSession: req.session.currentUser });
   })
@@ -51,27 +51,27 @@ router.get('/bars', (req, res, next) => {
   });
 });
 
-  router.get('/bars/:id', (req, res, next) => {
-  const { id } = req.params;
+router.get('/bars/:id', (req, res, next) => {
+const { id } = req.params;
 
-    // check if the logged in user is creator of the bar
-    function isCreator(bar){
-      if(req.session.currentUser && bar.user_id.toString() === req.session.currentUser._id){
-        return true
-      }
-      return false
+  // check if the logged in user is creator of the bar
+  function isCreator(bar){
+    if(req.session.currentUser && bar.user_id.toString() === req.session.currentUser._id){
+      return true
     }
+    return false
+  }
 
-    Bar.findById(id)
-      .then((theBar) => {
-      
-        res.render("bars/show", { bar: theBar, userInSession: req.session.currentUser, isCreator: isCreator(theBar)})
-      
-      })
-      .catch((error) => {
-        console.log("Error while retrieving bar details: ", error);
-        next(error);
-      });
+  Bar.findById(id)
+    .then((theBar) => {
+    
+      res.render("bars/show", { bar: theBar, userInSession: req.session.currentUser, isCreator: isCreator(theBar)})
+    
+    })
+    .catch((error) => {
+      console.log("Error while retrieving bar details: ", error);
+      next(error);
+    });
 });
 
 router.get('/bars/:id/edit', (req, res, next) => {
