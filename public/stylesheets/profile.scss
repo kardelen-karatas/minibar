@@ -1,8 +1,12 @@
 #profile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10em;
   .profile-card {
-    width: 80vw;
-    margin: 104px auto;
-    height: 40vh;
+    // width: 80vw;
+    margin: 0;
+    height: 60vh;
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 16px;
@@ -11,11 +15,11 @@
     flex-direction: column;
 
     .id {
-      position: absolute;
+      // position: absolute;
 
       img {
         width: 88px;
-        position: relative;
+        // position: relative;
         box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
         top: -64px;
       }
@@ -24,10 +28,26 @@
         font-weight: 800;
       }
     }
+  }
+  
+  .user-bars {
+    height: 60vh;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
 
-    .user-bars {
-
-    }
+  .user-favorite-bars {
+    height: 60vh;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
 }
 

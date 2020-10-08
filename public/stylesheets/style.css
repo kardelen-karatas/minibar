@@ -98,25 +98,42 @@ nav {
       list-style: none;
       margin: 8px; }
 
-#profile .profile-card {
-  width: 80vw;
-  margin: 104px auto;
-  height: 40vh;
-  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  padding: 16px;
+#profile {
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  flex-direction: column; }
-  #profile .profile-card .id {
-    position: absolute; }
+  margin-top: 10em; }
+  #profile .profile-card {
+    margin: 0;
+    height: 60vh;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
     #profile .profile-card .id img {
       width: 88px;
-      position: relative;
       box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
       top: -64px; }
     #profile .profile-card .id h2 {
       font-weight: 800; }
+  #profile .user-bars {
+    height: 60vh;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+  #profile .user-favorite-bars {
+    height: 60vh;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
 
 #unregistered {
   width: 80vw;
@@ -161,6 +178,82 @@ a {
   @media (min-width: 768px) {
     .side-spacing {
       margin: 0 50px; } }
+
+#signup {
+  width: 80vw;
+  height: 70vh;
+  background: url("https://images.unsplash.com/photo-1525268323446-0505b6fe7778?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1504&q=80");
+  background-repeat: cover;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5); }
+  #signup .left {
+    width: 0%; }
+  #signup .right {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+  @media (min-width: 768px) {
+    #signup {
+      height: 80vh;
+      margin: 50px auto; }
+      #signup .right, #signup .left {
+        width: 50%;
+        height: 100%; } }
+  #signup .left a {
+    text-decoration: none;
+    color: white;
+    padding-left: 20px;
+    padding-top: 50px; }
+  #signup .right form label, #signup .right form button {
+    display: flex;
+    justify-content: center; }
+    #signup .right form label input, #signup .right form button input {
+      border: none;
+      height: 32px;
+      border-radius: 5px;
+      box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5); }
+  #signup .right form label {
+    margin: 16px auto; }
+  #signup .right p {
+    color: white; }
+
+#login {
+  display: flex; }
+  #login .left {
+    width: 30vw;
+    height: auto; }
+    #login .left form {
+      margin: 200px auto; }
+      #login .left form label, #login .left form input {
+        display: flex;
+        justify-content: center;
+        margin: 16px auto; }
+      #login .left form button {
+        display: flex;
+        justify-content: center; }
+      #login .left form input {
+        height: 32px; }
+    #login .left p.a {
+      text-decoration: none;
+      padding-left: 20px;
+      padding-top: 50px; }
+    #login .left a {
+      color: #060606; }
+  #login .right {
+    width: 70vw;
+    height: 100%; }
+    #login .right img {
+      width: 100%; }
+
+.buttons {
+  display: flex;
+  justify-content: center; }
+  .buttons p {
+    margin: 8px; }
 
 #bar-index {
   display: flex;
