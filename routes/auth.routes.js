@@ -5,6 +5,7 @@ const bcryptjs = require('bcryptjs');
 const salt = bcryptjs.genSaltSync(10);
 
 const User = require('../models/User.model.js');
+const Bar = require('../models/Bar.model.js');
 
 const router = express.Router();
 
@@ -82,7 +83,19 @@ router.post('/login', (req, res, next) => {
 });
 
 router.get('/userProfile', (req, res) => {
-  res.render('users/user-profile', { userInSession: req.session.currentUser });
+
+  Bar.find()
+  .limit(5)
+  .then((allBarsFromDB) => {
+
+    res.render('users/user-profile', { userInSession: req.session.currentUser, bars : allBarsFromDB });
+  })
+  .catch((error) => {
+    console.log("Error while getting the bars from the DB: ", error);
+    next(error);
+  });
+
+  
 });
 
 router.post('/logout', (req, res) => {
