@@ -273,6 +273,9 @@ h2 {
       margin-right: 48px;
       border: solid 1px gainsboro;
       border-radius: 4px; }
+#map {
+  width: 50%;
+  height: 200px; }
 
 body {
   font: 14px 'Raleway', Helvetica, Arial, sans-serif !important; }

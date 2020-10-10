@@ -1,11 +1,13 @@
-<h2>bar details page</h2>
-
 <div class="bar-details">
   <h3>{{bar.name}}</h3>
 
   <p>Address: {{bar.address}}</p>
   <p>Minimum payment by credit card: {{bar.minimumCb}}</p>
   <p>Longitude Latitude: {{bar.latlng}}</p>
+</div>
+
+<div id="map">
+
 </div>
 
 {{#if isCreator}}
