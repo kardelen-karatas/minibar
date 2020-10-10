@@ -87,10 +87,17 @@ router.get('/userProfile', (req, res) => {
   console.log(user_id);
 
   Bar.find({user_id: mongoose.Types.ObjectId(`${user_id}`)})
-  .limit(5)
   .then((allBarsFromDB) => {
 
-    res.render('users/user-profile', { userInSession: req.session.currentUser, bars : allBarsFromDB });
+    res.render('users/user-profile',
+    { 
+      userInSession: req.session.currentUser,
+      bars : allBarsFromDB,
+      addedBars: allBarsFromDB.length,
+      day: new Date(req.session.currentUser.createdAt).getDay(),
+      month: new Date(req.session.currentUser.createdAt).getMonth(),
+      year: new Date(req.session.currentUser.createdAt).getYear()
+    });
   })
   .catch((error) => {
     console.log("Error while getting the bars from the DB: ", error);

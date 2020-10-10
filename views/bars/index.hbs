@@ -25,29 +25,29 @@
       <div class="bar">
         <a href="/bars/{{id}}">
           <img src="{{imageURL}}" alt="" class="bg">
-          <div class="infos">
-            <div class="name">
-              <h4>{{name}}</h4>
-              <p>{{address}}</p>
-            </div>
-            <div class="favorite">
-              <span class="iconify" data-inline="false" data-icon="ant-design:heart-outlined" style="font-size: 24px;"></span>
-            </div>
-            <div class="price">
-              <h5>{{minimumCb}}€</h5>
-              <div class="vote">
-                <div class="up">
-                  <img src="/images/up.png" alt="">
-                  <p>7</p>
-                </div>
-                <div class="down">
-                  <img src="/images/down.png" alt="">
-                  <p>2</p>
-                </div>
+        </a>
+        <div class="infos">
+          <div class="name">
+            <h4>{{name}}</h4>
+            <p>{{address}}</p>
+          </div>
+          <div class="favorite">
+            <span class="iconify" data-inline="false" data-icon="ant-design:heart-outlined" style="font-size: 24px;"></span>
+          </div>
+          <div class="price">
+            <h5>{{minimumCb}}€</h5>
+            <div class="vote">
+              <div class="up">
+                <img src="/images/up.png" alt="">
+                <p>7</p>
+              </div>
+              <div class="down">
+                <img src="/images/down.png" alt="">
+                <p>2</p>
               </div>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     {{/each}}
   </div>
@@ -57,7 +57,16 @@
 <script>
   const close = document.querySelector('.close');
   const intro = document.querySelector('.intro');
-  close.addEventListener('click', () => {
-    intro.style.display = 'none';
-  });
+  if (intro) {
+    close.addEventListener('click', () => {
+      intro.style.display = 'none';
+    });
+  }
+
+  const favorites = document.querySelectorAll('.favorite');
+  favorites.forEach((favorite) => {
+    favorite.addEventListener('click', () => {
+      favorite.children[0].style.color = 'red';
+    })
+  })
 </script>

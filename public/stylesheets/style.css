@@ -250,35 +250,35 @@ nav {
           border-top-left-radius: 10px;
           border-top-right-radius: 10px;
           width: 320px; }
-        #bar-index .bars .bar a .infos {
-          padding: 24px;
-          position: relative;
-          display: flex;
-          align-items: center;
-          justify-content: space-between; }
-          #bar-index .bars .bar a .infos .price {
-            position: absolute;
-            top: -39px;
-            right: 0;
-            background-color: white;
-            border-top-left-radius: 5px;
-            display: flex; }
-            #bar-index .bars .bar a .infos .price h5 {
-              margin: 8px;
-              font-weight: 600; }
-            #bar-index .bars .bar a .infos .price .vote {
+      #bar-index .bars .bar .infos {
+        padding: 24px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; }
+        #bar-index .bars .bar .infos .price {
+          position: absolute;
+          top: -39px;
+          right: 0;
+          background-color: white;
+          border-top-left-radius: 5px;
+          display: flex; }
+          #bar-index .bars .bar .infos .price h5 {
+            margin: 8px;
+            font-weight: 600; }
+          #bar-index .bars .bar .infos .price .vote {
+            display: flex;
+            margin-left: 16px; }
+            #bar-index .bars .bar .infos .price .vote div {
               display: flex;
-              margin-left: 16px; }
-              #bar-index .bars .bar a .infos .price .vote div {
-                display: flex;
-                width: fit-content;
-                align-items: center;
-                justify-content: space-between; }
-                #bar-index .bars .bar a .infos .price .vote div p {
-                  margin: 8px; }
-                #bar-index .bars .bar a .infos .price .vote div img {
-                  width: 16px;
-                  height: 16px; }
+              width: fit-content;
+              align-items: center;
+              justify-content: space-between; }
+              #bar-index .bars .bar .infos .price .vote div p {
+                margin: 8px; }
+              #bar-index .bars .bar .infos .price .vote div img {
+                width: 16px;
+                height: 16px; }
       #bar-index .bars .bar:hover {
         transform: scale(1.02); }
   #bar-index form {
