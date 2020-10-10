@@ -1,10 +1,4 @@
 #profile {
-<<<<<<< HEAD
-  .profile-card {
-    width: 80vw;
-    margin: 104px auto;
-    height: 40vh;
-=======
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -13,7 +7,6 @@
     // width: 80vw;
     margin: 0;
     height: 60vh;
->>>>>>> 02bd2f65a027ba2feec679498da907dff5ca081f
     box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     padding: 16px;
@@ -22,19 +15,11 @@
     flex-direction: column;
 
     .id {
-<<<<<<< HEAD
-      position: absolute;
-
-      img {
-        width: 88px;
-        position: relative;
-=======
       // position: absolute;
 
       img {
         width: 88px;
         // position: relative;
->>>>>>> 02bd2f65a027ba2feec679498da907dff5ca081f
         box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
         top: -64px;
       }
@@ -43,12 +28,6 @@
         font-weight: 800;
       }
     }
-<<<<<<< HEAD
-
-    .user-bars {
-
-    }
-=======
   }
   
   .user-bars {
@@ -69,7 +48,6 @@
     display: flex;
     align-items: center;
     flex-direction: column;
->>>>>>> 02bd2f65a027ba2feec679498da907dff5ca081f
   }
 }
 
