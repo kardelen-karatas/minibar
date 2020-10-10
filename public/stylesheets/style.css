@@ -92,15 +92,26 @@
 
 nav {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #cdfef3; }
+  background-color: #cdfef3;
+  height: 72px;
+  justify-content: space-between; }
   nav ul {
     display: flex;
-    margin: 0; }
+    margin: 0;
+    align-items: center; }
     nav ul li {
       list-style: none;
       margin: 8px; }
+  nav .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly; }
+
+.sticky {
+  position: sticky;
+  top: -1px;
+  z-index: 2;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1); }
 
 #profile {
   display: flex;
@@ -185,7 +196,9 @@ nav {
         justify-content: space-around; } }
 
 .logo {
-  border-radius: 50%; }
+  border-radius: 50%;
+  width: 48px;
+  height: 48px; }
 
 .avatar {
   border-radius: 50%; }

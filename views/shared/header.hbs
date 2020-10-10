@@ -1,14 +1,17 @@
   <nav>
-    <a href="/bars"><img src="/images/minibar.gif" alt="" class="logo m-2" width="32" height="32"></a>
+    <a href="/bars"><img src="/images/minibar.gif" alt="" class="logo m-3"></a>
     {{#if userInSession}}
-      <a href="/userProfile">My account</a>
-      <form id="logout-form" action="/logout" method="POST">
-        <button>Logout</button>
-      </form>
+      <div class="links">
+        <a href="/userProfile" class="btn btn-green">Mon espace</a>
+        <a href="/bars/new" class="btn btn-green" style="margin-left: 48px;">Ajouter un bar</a>
+        <form id="logout-form" action="/logout" method="POST">
+          <button class="btn btn-green-light" style="margin-left: 48px; margin-right: 48px;"><span class="iconify" data-inline="false" data-icon="entypo:log-out" style="font-size: 24px;"></span></button>
+        </form>
+      </div>
     {{else}}
     <ul>
-      <li><a href="/signup">Sign up</a></li>
-      <li><a href="/login">Log in</a></li>
+      <li><a href="/signup" class="btn btn-green-light">Sign up</a></li>
+      <li><a href="/login" class="btn btn-green">Log in</a></li>
     </ul>
     {{/if}}
   </nav>
