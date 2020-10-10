@@ -34,7 +34,6 @@ router.post('/bars/new', fileUploader.single('image'), (req, res, next) => {
     imageURL: req.file.path
   })
     .then((newBar) => {
-      console.log(newBar);
       res.redirect('/bars');
     })
     .catch((err) => {
@@ -49,15 +48,15 @@ router.post('/bars/new', fileUploader.single('image'), (req, res, next) => {
 
 router.get('/bars', (req, res, next) => {
   
-  
   let queryString = {};
   
-  if(req.query.name){
-    queryString = { name: {$regex: req.query.name} } && { address: {$regex: req.query.name} };
+  if(req.query.query){
+    queryString = {$or: [{name: {$regex: req.query.query, $options: "i"}}, {address: {$regex: req.query.query, $options: "i"}}]};
   }
 
   Bar.find(queryString)
   .then((allBarsFromDB) => {
+    console.log(queryString);
     res.render("bars/index", { bars : allBarsFromDB, userInSession: req.session.currentUser });
   })
   .catch((error) => {

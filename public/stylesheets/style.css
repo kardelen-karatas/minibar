@@ -1,14 +1,18 @@
 .btn-green {
   background-color: #34fbcb !important;
-  border-color: #34fbcb !important; }
+  border-color: #34fbcb !important;
+  outline: none; }
   .btn-green:hover {
-    background-color: #cdfef3 !important; }
+    background-color: #cdfef3 !important;
+    outline: none; }
 
 .btn-green-light {
   background-color: #cdfef3 !important;
-  border-color: #cdfef3 !important; }
+  border-color: #cdfef3 !important;
+  outline: none; }
   .btn-green-light:hover {
-    background-color: #34fbcb !important; }
+    background-color: #34fbcb !important;
+    outline: none; }
 
 .buttons-signup, .buttons-login {
   display: flex;
@@ -167,6 +171,89 @@ nav {
 .avatar {
   border-radius: 50%; }
 
+h2 {
+  margin: 24px auto !important;
+  width: 1024px;
+  text-align: center; }
+
+.intro {
+  margin: 24px auto !important;
+  width: 1024px;
+  text-align: center;
+  background-color: #cdfef3;
+  border-radius: 10px;
+  padding: 32px;
+  position: relative;
+  opacity: 0.7; }
+  .intro svg {
+    position: absolute;
+    top: 10px;
+    right: 10px; }
+
+#bar-index {
+  display: flex;
+  flex-direction: column; }
+  #bar-index .bars {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1024px;
+    margin: 0 auto;
+    justify-content: space-between; }
+    #bar-index .bars .bar {
+      width: 320px;
+      margin-bottom: 48px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all .2s ease-in-out; }
+      #bar-index .bars .bar a {
+        text-decoration: none; }
+        #bar-index .bars .bar a .bg {
+          background-position: cover;
+          border-top-left-radius: 10px;
+          border-top-right-radius: 10px; }
+        #bar-index .bars .bar a .infos {
+          padding: 24px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: space-between; }
+          #bar-index .bars .bar a .infos .price {
+            position: absolute;
+            top: -39px;
+            right: 0;
+            background-color: white;
+            border-top-left-radius: 5px;
+            display: flex; }
+            #bar-index .bars .bar a .infos .price h5 {
+              margin: 8px;
+              font-weight: 600; }
+            #bar-index .bars .bar a .infos .price .vote {
+              display: flex;
+              margin-left: 16px; }
+              #bar-index .bars .bar a .infos .price .vote div {
+                display: flex;
+                width: fit-content;
+                align-items: center;
+                justify-content: space-between; }
+                #bar-index .bars .bar a .infos .price .vote div p {
+                  margin: 8px; }
+                #bar-index .bars .bar a .infos .price .vote div img {
+                  width: 16px;
+                  height: 16px; }
+      #bar-index .bars .bar:hover {
+        transform: scale(1.02); }
+  #bar-index form {
+    margin: 0 auto 40px auto;
+    display: flex;
+    align-items: center; }
+    #bar-index form input {
+      height: 40px;
+      width: 400px;
+      margin-right: 48px;
+      border: solid 1px gainsboro;
+      border-radius: 4px; }
+
 body {
   font: 14px 'Raleway', Helvetica, Arial, sans-serif !important; }
 
@@ -254,14 +341,5 @@ a {
   justify-content: center; }
   .buttons p {
     margin: 8px; }
-
-#bar-index {
-  display: flex;
-  flex-wrap: wrap; }
-  #bar-index .bar {
-    width: fit-content;
-    padding: 24px;
-    border: solid 1px black;
-    margin: 24px; }
 
 /*# sourceMappingURL=style.css.map */
