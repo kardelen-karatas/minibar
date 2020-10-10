@@ -3,10 +3,20 @@
 <a href="/bars/new">Add a bar</a>
 {{/if}}
 
+<form action="/bars" method="GET">
+  <label>
+    Bar
+    <input type="text" name="name">
+  </label>
+  
+  <button type="submit">SEARCH</button>
+</form>
+
 <section id="bar-index">
   <div class="bars">
     {{#each bars}}
       <div class="bar">
+        <img src="{{imageURL}}" alt="">
         <h3>{{name}}</h3>
         <p>{{address}}</p>
         <p>{{minimumCb}}€</p>

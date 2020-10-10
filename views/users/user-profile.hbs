@@ -1,6 +1,38 @@
 {{#if userInSession}}
-  <h2>Welcome, {{ userInSession.username }}!</h2>
-  <p>This is your profile page my friend!</p>
+  <section id="profile">
+    <div class="profile-card">
+      <div class="id">
+        <img src="https://api.adorable.io/avatars/150/abott@adorable.png" alt="" class="avatar">
+        <h2>{{ userInSession.username }}</h2>
+      </div>
+    </div>
+
+    <div class="user-bars">
+        {{#each bars}}
+          <div class="bar">
+            <h3>{{name}}</h3>
+            <p>{{address}}</p>
+            <p>{{minimumCb}}€</p>
+            <p>Creator : {{user_id}}</p>
+            <a href="/bars/{{id}}">See more</a>
+          </div>
+        {{/each}}
+    </div>
+
+
+    <div class="user-favorite-bars">
+      {{#each bars}}
+        <div class="bar">
+          <h3>{{name}}</h3>
+          <p>{{address}}</p>
+          <p>{{minimumCb}}€</p>
+          <p>Creator : {{user_id}}</p>
+          <a href="/bars/{{id}}">See more</a>
+        </div>
+      {{/each}}
+    </div>
+  </section>
+
 
   <button>
     <a href="/userProfile">Reload the page</a>
@@ -10,5 +42,13 @@
     <button>Logout</button>
   </form>
 {{else}}
-  <p>Session is not registered!</p>
+  <section id="unregistered">
+    <div>
+      <p>Vous devez être connecté(e) pour accéder à cette page !</p>
+      <div class="links">
+        <a href="/signup" class="btn btn-green">Sign up</a>
+        <a href="/login" class="btn btn-green-light">Log in</a>
+      </div>
+    </div>
+  </section>
 {{/if}}

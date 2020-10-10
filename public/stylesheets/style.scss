@@ -1,50 +1,38 @@
+
 @mixin breakpoint($breakpoint, $direction) {
   $breakpoint-value: map-get($breakpoints, $breakpoint);
   @if ($direction == max) {
-      @media (max-width: ($breakpoint-value - 1)) {
+    @media (max-width: ($breakpoint-value - 1)) {
           @content;
-      }
+        }
   }
   @if ($direction == min) {
-      @media (min-width: ($breakpoint-value)) {
-        @content;
-      }
+    @media (min-width: ($breakpoint-value)) {
+      @content;
+    }
   }
 }
+
 
 $breakpoints: (
   mobile: 768px,
   between: 1280px
-);
+  );
+  
+@import "buttons";
+@import "login";
+@import "signup";
+@import "nav";
+@import "profile";
+@import "images";
+
 
 body {
-  // padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 14px 'Raleway', Helvetica, Arial, sans-serif !important;
 }
 
 a {
-  color: #00B7FF;
-}
-
-.logo {
-  border-radius: 50%;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: antiquewhite;
-  
-  ul {
-    display: flex;
-    margin: 0;
-    
-    li {
-      list-style: none;
-      margin: 8px;
-    }
-  }
+  color: black !important;
 }
 
 

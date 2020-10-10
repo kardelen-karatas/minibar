@@ -19,7 +19,7 @@ const barSchema = new Schema(
       max: [40, 'Minimum payment by cart cannot be at more than 40']
     },
     latlng: [Number],
-    imageURL: String
+    imageURL: {type: String}
   },
   {
     timestamps: true,

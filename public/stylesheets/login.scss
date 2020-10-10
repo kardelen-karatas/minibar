@@ -1,0 +1,46 @@
+#login {
+  display: flex;
+
+  .left {
+    width: 30vw;
+    height: auto;
+
+    form {
+      margin: 200px auto;
+
+      label, input {
+        display: flex;
+        justify-content: center;
+        margin: 16px auto;
+
+      }
+
+      button {
+        display: flex;
+        justify-content: center;
+      }
+
+      input {
+        height: 32px;
+      }
+    }
+    
+    p.a{
+      text-decoration: none;
+      padding-left: 20px;
+      padding-top: 50px;
+    }
+    a{
+      color: #060606;
+    }
+  }
+
+  .right {
+    width: 70vw;
+    height: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+}
