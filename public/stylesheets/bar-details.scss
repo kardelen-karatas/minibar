@@ -10,7 +10,12 @@
     flex-direction: column;
     padding-inline: 10px;
   }
-
+  
+  .bar-buttons{
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+  }
 
   img{
     height: 50vh;
@@ -18,6 +23,14 @@
     margin:0px
   }
 
+  h5{
+    font-size: 2.25rem;
+    display: inline;
+    // text-align: center;
+  }
+  #min-cb{
+    font-size: 0.5rem;;
+  }
 }
 #map {
   height: 80vh;

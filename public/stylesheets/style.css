@@ -296,9 +296,18 @@ h2 {
     align-content: flex-end;
     flex-direction: column;
     padding-inline: 10px; }
+  .bar-details .bar-buttons {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between; }
   .bar-details img {
     height: 50vh;
     margin: 0px; }
+  .bar-details h5 {
+    font-size: 2.25rem;
+    display: inline; }
+  .bar-details #min-cb {
+    font-size: 0.5rem; }
 
 #map {
   height: 80vh;

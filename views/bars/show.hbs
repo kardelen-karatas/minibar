@@ -6,19 +6,18 @@
     
     <img src="{{bar.imageURL}}" alt="">
     <h3>{{bar.name}}</h3>
-    <p>Address: {{bar.address}}</p>
-    <p>Minimum payment by credit card: {{bar.minimumCb}}</p>
+    <p>{{bar.address}}</p>
+    <h5>{{bar.minimumCb}}€</h5>
 
-    <div>
+    <div class="bar-buttons">
       
-      {{#if isCreator}}
+      {{#if isCreator}}    
+        <p class="btn btn-green-light"><a href="/bars/{{bar.id}}/edit">Editer</a></p>
         <form action="/bars/{{bar.id}}/delete" method="POST">  
           <button class="btn btn-green">supprimer</button>
-        </form>      
-        <p><a href="/bars/{{bar.id}}/edit">Edit</a></p>
+        </form>  
       {{/if}}
     </div>
-    <p><a href="/bars">Back to bars list</a></p>
   </div>
   
 </div>
