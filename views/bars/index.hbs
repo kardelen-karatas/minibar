@@ -4,15 +4,30 @@
 {{/if}}
 
 <section id="bar-index">
-  <div class="bars">
-    {{#each bars}}
-      <div class="bar">
-        <h3>{{name}}</h3>
-        <p>{{address}}</p>
-        <p>{{minimumCb}}€</p>
-        <p>Creator : {{user_id}}</p>
-        <a href="/bars/{{id}}">See more</a>
-      </div>
-    {{/each}}
-  </div>
+    <div class="bars">
+      {{#each bars}}
+      <a href="/bars/{{id}}">
+        <div class="bar">
+          <img src="https://images.unsplash.com/photo-1495270804540-e6d9120e6f50?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=320" alt="" class="bg">
+          <div class="infos">
+            <h3>{{name}}</h3>
+            <p>{{address}}</p>
+            <div class="price">
+              <h5>{{minimumCb}}€</h5>
+              <div class="vote">
+                <div class="up">
+                  <img src="/images/up.png" alt="">
+                  <p>7</p>
+                </div>
+                <div class="down">
+                  <img src="/images/down.png" alt="">
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+      {{/each}}
+    </div>
 </section>

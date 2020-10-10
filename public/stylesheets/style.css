@@ -167,6 +167,54 @@ nav {
 .avatar {
   border-radius: 50%; }
 
+#bar-index .bars {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1024px;
+  margin: 0 auto;
+  justify-content: space-between; }
+  #bar-index .bars a {
+    text-decoration: none; }
+    #bar-index .bars a .bar {
+      width: 320px;
+      margin-bottom: 48px;
+      border-radius: 10px;
+      box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: all .2s ease-in-out; }
+      #bar-index .bars a .bar .bg {
+        background-position: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px; }
+      #bar-index .bars a .bar .infos {
+        padding: 24px;
+        position: relative; }
+        #bar-index .bars a .bar .infos .price {
+          position: absolute;
+          top: -39px;
+          right: 0;
+          background-color: white;
+          border-top-left-radius: 5px;
+          display: flex; }
+          #bar-index .bars a .bar .infos .price h5 {
+            margin: 8px;
+            font-weight: 600; }
+          #bar-index .bars a .bar .infos .price .vote {
+            display: flex;
+            margin-left: 16px; }
+            #bar-index .bars a .bar .infos .price .vote div {
+              display: flex;
+              width: fit-content;
+              align-items: center;
+              justify-content: space-between; }
+              #bar-index .bars a .bar .infos .price .vote div p {
+                margin: 8px; }
+              #bar-index .bars a .bar .infos .price .vote div img {
+                width: 16px;
+                height: 16px; }
+      #bar-index .bars a .bar:hover {
+        transform: scale(1.02); }
+
 body {
   font: 14px 'Raleway', Helvetica, Arial, sans-serif !important; }
 
@@ -254,14 +302,5 @@ a {
   justify-content: center; }
   .buttons p {
     margin: 8px; }
-
-#bar-index {
-  display: flex;
-  flex-wrap: wrap; }
-  #bar-index .bar {
-    width: fit-content;
-    padding: 24px;
-    border: solid 1px black;
-    margin: 24px; }
 
 /*# sourceMappingURL=style.css.map */
