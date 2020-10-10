@@ -1,18 +1,22 @@
 .btn-green {
   background-color: #34fbcb !important;
   border-color: #34fbcb !important;
+  outline: none;
 
   &:hover {
     background-color: #cdfef3 !important;
+    outline: none;
   }
 }
 
 .btn-green-light {
   background-color: #cdfef3 !important;
   border-color: #cdfef3 !important;
+  outline: none;
 
   &:hover {
     background-color: #34fbcb !important;
+    outline: none;
   }
 }
 
