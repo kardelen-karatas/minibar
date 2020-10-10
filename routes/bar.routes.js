@@ -18,7 +18,7 @@ router.get('/bars/new', (req, res, next) => {
 router.post('/bars/new', (req, res, next) => {
   // creation d'un bar
   const { name, address, minimumCb } = req.body;
-  const user_id = req.session.currentUser._id
+  const user_id = req.session.currentUser._id;
 
   if(name === '' || address === '' || minimumCb === ''){
     res.render('bars/new', {userInSession: req.session.currentUser, errorMessage: 'All fields are mandatory. Please provide bar name, address and min payment by cart.' });
@@ -27,7 +27,7 @@ router.post('/bars/new', (req, res, next) => {
 
   Bar.create({ name, address, minimumCb, user_id })
     .then((newBar) => {
-      console.log(user_id)
+      console.log(user_id);
       res.redirect('/bars');
     })
     .catch((err) => {
@@ -35,14 +35,22 @@ router.post('/bars/new', (req, res, next) => {
         res.status(500).render('bars/new', { errorMessage: err.message });
       }
       else {
-        next(err)
-      };
+        next(err);
+      }
   });
 });
 
 router.get('/bars', (req, res, next) => {
-  Bar.find()
+  
+  let queryString = {};
+  
+  if(req.query.query){
+    queryString = {$or: [{name: {$regex: req.query.query, $options: "i"}}, {address: {$regex: req.query.query, $options: "i"}}]};
+  }
+
+  Bar.find(queryString)
   .then((allBarsFromDB) => {
+    console.log(queryString);
     res.render("bars/index", { bars : allBarsFromDB, userInSession: req.session.currentUser });
   })
   .catch((error) => {
@@ -51,27 +59,27 @@ router.get('/bars', (req, res, next) => {
   });
 });
 
-  router.get('/bars/:id', (req, res, next) => {
-  const { id } = req.params;
+router.get('/bars/:id', (req, res, next) => {
+const { id } = req.params;
 
-    // check if the logged in user is creator of the bar
-    function isCreator(bar){
-      if(req.session.currentUser && bar.user_id.toString() === req.session.currentUser._id){
-        return true
-      }
-      return false
+  // check if the logged in user is creator of the bar
+  function isCreator(bar){
+    if(req.session.currentUser && bar.user_id.toString() === req.session.currentUser._id){
+      return true
     }
+    return false
+  }
 
-    Bar.findById(id)
-      .then((theBar) => {
-      
-        res.render("bars/show", { bar: theBar, userInSession: req.session.currentUser, isCreator: isCreator(theBar)})
-      
-      })
-      .catch((error) => {
-        console.log("Error while retrieving bar details: ", error);
-        next(error);
-      });
+  Bar.findById(id)
+    .then((theBar) => {
+    
+      res.render("bars/show", { bar: theBar, userInSession: req.session.currentUser, isCreator: isCreator(theBar)})
+    
+    })
+    .catch((error) => {
+      console.log("Error while retrieving bar details: ", error);
+      next(error);
+    });
 });
 
 router.get('/bars/:id/edit', (req, res, next) => {
