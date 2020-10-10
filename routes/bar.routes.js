@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
+const hbs = require('hbs')
 
 module.exports = router;
 
@@ -65,6 +66,8 @@ router.get('/bars', (req, res, next) => {
   });
 });
 
+hbs.registerHelper("json", ctx => JSON.stringify(ctx));
+
 router.get('/bars/:id', (req, res, next) => {
 const { id } = req.params;
 
@@ -79,7 +82,15 @@ const { id } = req.params;
   Bar.findById(id)
     .then((theBar) => {
     
-      res.render("bars/show", { bar: theBar, userInSession: req.session.currentUser, isCreator: isCreator(theBar)});
+      res.render("bars/show", 
+      { 
+        bar: theBar, 
+        userInSession: req.session.currentUser, 
+        isCreator: isCreator(theBar),
+        WINDATAS: {
+          bar:theBar
+        }
+      })
     
     })
     .catch((error) => {
@@ -87,6 +98,7 @@ const { id } = req.params;
       next(error);
     });
 });
+
 
 router.get('/bars/:id/edit', (req, res, next) => {
 

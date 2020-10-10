@@ -1,19 +1,27 @@
-<h2>bar details page</h2>
-
 <div class="bar-details">
-  <h3>{{bar.name}}</h3>
+  <div id="map"> </div>
+  
+  <div class="bar-info">
 
-  <p>Address: {{bar.address}}</p>
-  <p>Minimum payment by credit card: {{bar.minimumCb}}</p>
-  <p>Longitude Latitude: {{bar.latlng}}</p>
-</div>
-
-{{#if isCreator}}
-  <form action="/bars/{{bar.id}}/delete" method="POST">  
-    <button>supprimer</button>
-  </form>
     
-  <p><a href="/bars/{{bar.id}}/edit">Edit</a></p>
-{{/if}}
+    <img src="{{bar.imageURL}}" alt="">
+    <h3>{{bar.name}}</h3>
+    <p>{{bar.address}}</p>
+    <h5>{{bar.minimumCb}}€</h5>
 
-<p><a href="/bars">Back to bars list</a></p>
+    <div class="bar-buttons">
+      
+      {{#if isCreator}}    
+        <p class="btn btn-green-light"><a href="/bars/{{bar.id}}/edit">Editer</a></p>
+        <form action="/bars/{{bar.id}}/delete" method="POST">  
+          <button class="btn btn-green">supprimer</button>
+        </form>  
+      {{/if}}
+    </div>
+  </div>
+  
+</div>
+<script>
+  // global `DATAS` variable
+  window.WINDATAS = {{{json WINDATAS}}};
+</script>
