@@ -83,8 +83,10 @@ router.post('/login', (req, res, next) => {
 });
 
 router.get('/userProfile', (req, res) => {
+  const user_id = req.session.currentUser._id;
+  console.log(user_id);
 
-  Bar.find()
+  Bar.find({user_id: mongoose.Types.ObjectId(`${user_id}`)})
   .limit(5)
   .then((allBarsFromDB) => {
 
