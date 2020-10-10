@@ -1,0 +1,19 @@
+<h2>bar details page</h2>
+
+<div class="bar-details">
+  <h3>{{bar.name}}</h3>
+
+  <p>Address: {{bar.address}}</p>
+  <p>Minimum payment by credit card: {{bar.minimumCb}}</p>
+  <p>Longitude Latitude: {{bar.latlng}}</p>
+</div>
+
+{{#if isCreator}}
+  <form action="/bars/{{bar.id}}/delete" method="POST">  
+    <button>supprimer</button>
+  </form>
+    
+  <p><a href="/bars/{{bar.id}}/edit">Edit</a></p>
+{{/if}}
+
+<p><a href="/bars">Back to bars list</a></p>

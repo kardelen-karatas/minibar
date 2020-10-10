@@ -5,6 +5,7 @@
         <img src="https://api.adorable.io/avatars/150/abott@adorable.png" alt="" class="avatar">
         <h2>{{ userInSession.username }}</h2>
       </div>
+<<<<<<< HEAD
       <div class="user-bars">
         <h4>Bars ajoutés</h4>
         <h4>Bars favoris</h4>
@@ -13,6 +14,36 @@
     <button>
       <a href="/userProfile">Reload the page</a>
     </button>
+=======
+    </div>
+
+    <div class="user-bars">
+        {{#each bars}}
+          <div class="bar">
+            <h3>{{name}}</h3>
+            <p>{{address}}</p>
+            <p>{{minimumCb}}€</p>
+            <p>Creator : {{user_id}}</p>
+            <a href="/bars/{{id}}">See more</a>
+          </div>
+        {{/each}}
+    </div>
+
+
+    <div class="user-favorite-bars">
+      {{#each bars}}
+        <div class="bar">
+          <h3>{{name}}</h3>
+          <p>{{address}}</p>
+          <p>{{minimumCb}}€</p>
+          <p>Creator : {{user_id}}</p>
+          <a href="/bars/{{id}}">See more</a>
+        </div>
+      {{/each}}
+    </div>
+  </section>
+
+>>>>>>> 02bd2f65a027ba2feec679498da907dff5ca081f
 
     <form id="logout-form" action="/logout" method="POST">
       <button>Logout</button>

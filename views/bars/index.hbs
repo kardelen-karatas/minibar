@@ -1,0 +1,64 @@
+<h2>Tu cherches un bar ?</h2>
+{{#if userInSession}}
+{{else}}
+  <div class="intro">
+    <a href="#" class="close"><span class="iconify" data-inline="false" data-icon="clarity:close-line" style="font-size: 24px;"></span></a>
+    <h6>Si toi aussi, tu n'as jamais de liquide sur toi mais que tu vas quand même régulièrement dans des bars, restos, que sais-je... alors tu es au bon endroit.</h6>
+    <h6>Ici sont répertoriés de nombreux bar dans Paris avec le montant minimum qu'il faudra si tu veux utiliser une CB.</h6>
+    <h6>Si tes bars favoris ne sont pas dans cette liste, inscris-toi et rajoute-les 😉</h6>
+    <h6>Bonne soirée !</h6>
+  </div>
+{{/if}}
+
+<section id="bar-index">
+  <form action="/bars" method="GET">
+    <input type="text" name="query" placeholder="Rechercher un bar">
+    <button type="submit" class="btn btn-green">SEARCH</button>
+    {{#if userInSession}}
+      <a href="/bars/new" class="btn btn-green-light" style="margin-left: 48px;">Add a bar</a>
+    {{else}}
+      <a href="/login" class="btn btn-green-light" style="margin-left: 48px;">Ajouter un bar</a>
+    {{/if}}
+  </form>
+  <div class="bars">
+    {{#each bars}}
+    
+      <div class="bar">
+        <a href="/bars/{{id}}">
+          <img src="https://images.unsplash.com/photo-1495270804540-e6d9120e6f50?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=320" alt="" class="bg">
+          <div class="infos">
+            <div class="name">
+              <h4>{{name}}</h4>
+              <p>{{address}}</p>
+            </div>
+            <div class="favorite">
+              <span class="iconify" data-inline="false" data-icon="ant-design:heart-outlined" style="font-size: 24px;"></span>
+            </div>
+            <div class="price">
+              <h5>{{minimumCb}}€</h5>
+              <div class="vote">
+                <div class="up">
+                  <img src="/images/up.png" alt="">
+                  <p>7</p>
+                </div>
+                <div class="down">
+                  <img src="/images/down.png" alt="">
+                  <p>2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</section>
+
+<script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
+<script>
+  const close = document.querySelector('.close');
+  const intro = document.querySelector('.intro');
+  close.addEventListener('click', () => {
+    intro.style.display = 'none';
+  });
+</script>
