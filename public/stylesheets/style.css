@@ -378,14 +378,14 @@ nav {
     display: flex;
     align-content: flex-end;
     flex-direction: column;
-    padding-inline: 10px; }
+    width: 320px; }
   #bar-details .bar-buttons {
     margin-top: 8px;
     display: flex;
     justify-content: space-between; }
   #bar-details img {
     height: 30vh;
-    width: 384px;
+    width: 320px;
     margin-bottom: 32px;
     border-radius: 10px; }
   #bar-details h5 {

@@ -59,7 +59,7 @@ router.get('/bars', (req, res, next) => {
   .sort({ createdAt: -1 })
   .then((allBarsFromDB) => {
     console.log(queryString);
-    res.render("bars/index", { bars : allBarsFromDB, userInSession: req.session.currentUser });
+    res.render("bars/index", { bars: allBarsFromDB, userInSession: req.session.currentUser });
   })
   .catch((error) => {
     console.log("Error while getting the bars from the DB: ", error);
