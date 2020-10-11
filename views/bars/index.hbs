@@ -12,8 +12,7 @@
   {{/if}}
   <form action="/bars" method="GET">
     <input type="text" name="query" placeholder="Rechercher un bar">
-    <button type="submit" class="btn btn-green"><span class="iconify" data-inline="false" data-icon="ant-design:search-outlined" style="font-size: 24px;"></span>
-</button>
+    <button type="submit" class="btn btn-green"><span class="iconify" data-inline="false" data-icon="ant-design:search-outlined" style="font-size: 24px;"></span></button>
     {{#if userInSession}}
       <a href="/bars/new" class="btn btn-green-light" style="margin-left: 48px;">Ajouter un bar</a>
     {{else}}

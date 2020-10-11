@@ -20,8 +20,6 @@ L.tileLayer('https://{s}.tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-toke
 // show the scale bar on the lower left corner
 L.control.scale().addTo(map);
 
-
-console.log(bar.address);
 axios.get("https://nominatim.openstreetmap.org/", {params: {format:"json", addressdetails: "1", q: bar.address, limit:"1"}})
 .then(response => {
   

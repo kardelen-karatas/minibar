@@ -1,9 +1,9 @@
-.bar-details{
-
+#bar-details{
   display: flex;
-  align-items: center;
   justify-content: space-around;
-  // margin:0;
+  width: 1024px;
+  margin: 32px auto;
+  
   .bar-info{
     display: flex;
     align-content: flex-end;
@@ -18,9 +18,10 @@
   }
 
   img{
-    height: 50vh;
+    height: 30vh;
     // width: 50vh;
-    margin:0px
+    margin-bottom: 32px;
+    border-radius: 10px;
   }
 
   h5{
@@ -34,9 +35,5 @@
 }
 #map {
   height: 80vh;
-  margin-top: 8vh;
-  // margin-left: 10px;
-  // padding: 50px;
-  // margin-bottom: 15px;
   flex-basis: 60%;
 }

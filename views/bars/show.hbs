@@ -1,16 +1,14 @@
-<div class="bar-details">
+<section id="bar-details">
   <div id="map"> </div>
   
   <div class="bar-info">
-
-    
+    <a href="/bars" class="btn btn-green" style="margin-bottom: 32px;"> Retourner à la liste des bars</a>
     <img src="{{bar.imageURL}}" alt="">
-    <h3>{{bar.name}}</h3>
+    <h4>{{bar.name}}</h4>
     <p>{{bar.address}}</p>
     <h5>{{bar.minimumCb}}€</h5>
 
     <div class="bar-buttons">
-      
       {{#if isCreator}}    
         <p class="btn btn-green-light"><a href="/bars/{{bar.id}}/edit">Editer</a></p>
         <form action="/bars/{{bar.id}}/delete" method="POST">  
@@ -20,8 +18,8 @@
     </div>
   </div>
   
-</div>
+</section>
 <script>
   // global `DATAS` variable
-  window.WINDATAS = {{{json WINDATAS}}};
+  window.WINDATAS = {{{json WINDATAS}}}
 </script>

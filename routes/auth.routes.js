@@ -52,7 +52,7 @@ router.post('/signup', (req, res, next) => {
 
 router.get('/login', (req, res, next) => {
   res.render('auth/login');
-})
+});
 
 
 router.post('/login', (req, res, next) => {

@@ -1,4 +1,3 @@
-
 #bar-index {
   display: flex;
   flex-direction: column;
@@ -29,7 +28,7 @@
   .bars {
     display: flex;
     flex-wrap: wrap;
-    max-width: 1024px;
+    width: 1024px;
     margin: 0 auto;
     justify-content: space-between;
 
