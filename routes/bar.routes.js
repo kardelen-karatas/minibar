@@ -35,7 +35,7 @@ router.post('/bars/new', fileUploader.single('image'), (req, res, next) => {
     imageURL: req.file.path
   })
     .then((newBar) => {
-      res.redirect(`/bars/${newBar.id}`);
+      res.redirect(`/bars/${newBar._id}`);
     })
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {
@@ -56,6 +56,7 @@ router.get('/bars', (req, res, next) => {
   }
 
   Bar.find(queryString)
+  .sort({ createdAt: -1 })
   .then((allBarsFromDB) => {
     console.log(queryString);
     res.render("bars/index", { bars : allBarsFromDB, userInSession: req.session.currentUser });

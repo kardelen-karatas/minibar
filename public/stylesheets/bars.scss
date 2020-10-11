@@ -45,10 +45,11 @@
         text-decoration: none;
         
         .bg {
-          background-position: cover;
+          object-fit: cover;
           border-top-left-radius: 10px;
           border-top-right-radius: 10px;
           width: 320px;
+          height: 213.25px;
         }
       }
       
