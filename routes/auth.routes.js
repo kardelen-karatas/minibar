@@ -87,6 +87,7 @@ router.get('/userProfile', (req, res) => {
   console.log(user_id);
 
   Bar.find({user_id: mongoose.Types.ObjectId(`${user_id}`)})
+  .limit(6)
   .then((allBarsFromDB) => {
 
     res.render('users/user-profile',
@@ -94,7 +95,7 @@ router.get('/userProfile', (req, res) => {
       userInSession: req.session.currentUser,
       bars : allBarsFromDB,
       addedBars: allBarsFromDB.length,
-      day: new Date(req.session.currentUser.createdAt).getDay(),
+      day: new Date(req.session.currentUser.createdAt).getDate(),
       month: new Date(req.session.currentUser.createdAt).getMonth(),
       year: new Date(req.session.currentUser.createdAt).getYear()
     });

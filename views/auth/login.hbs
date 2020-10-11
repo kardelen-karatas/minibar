@@ -1,6 +1,6 @@
 <section id="login">
   <div class="left side-spacing content">
-    <p><a href="/">Homepage</a></p>
+    <a href="/bars" class="btn btn-green" style="margin-top: 48px;">Retourner sur la page d'accueil</a>
     
     <form action="/login" method="POST">
 
@@ -15,9 +15,9 @@
       <input type="password" name="password" id="input-password" placeholder="********" />
 
       <div class="buttons-signup">
-        <button type="submit" class="btn btn-success">Login</button>
+        <button type="submit" class="btn btn-green-light">Login</button>
         <p>OR</p>
-        <a href="/signup" class="btn btn-light">Sign up</a>
+        <a href="/signup" class="btn btn-green">Sign up</a>
       </div>
 
       {{#if errorMessage}}

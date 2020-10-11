@@ -5,8 +5,6 @@
 
   </div>
   <div class="right">
-      <a href="#" class="btn btn-primary mt-4">Sign up with Facebook</a>
-      <a href="#" class="btn btn-primary mt-4">Sign up with Google</a>
       <form action="/signup" method="POST">
           <label for="username">
               {{!-- Username --}}
@@ -24,9 +22,9 @@
           </label>
 
           <div class="buttons-login">
-            <button type="submit" class="btn btn-success">Sign in</button>
+            <button type="submit" class="btn btn-green-light">Sign in</button>
             <p>OR</p>
-            <a href="/login" class="btn btn-light">Log in</a>
+            <a href="/login" class="btn btn-green">Log in</a>
           </div>
       {{#if errorMessage}}
           <p class="error">{{errorMessage}}</p>

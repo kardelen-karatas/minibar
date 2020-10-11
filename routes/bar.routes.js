@@ -35,7 +35,7 @@ router.post('/bars/new', fileUploader.single('image'), (req, res, next) => {
     imageURL: req.file.path
   })
     .then((newBar) => {
-      res.redirect('/bars');
+      res.redirect(`/bars/${newBar.id}`);
     })
     .catch((err) => {
       if (err instanceof mongoose.Error.ValidationError) {

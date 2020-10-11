@@ -1,26 +1,50 @@
-<h2>New Bar</h2>
-<form action="/bars/new" method="POST" enctype="multipart/form-data">
-  <label>
-    name:
-    <input type="text" name="name" />
-  </label>
-  
+<section id="add-bar">
+  <h2>Ajouter un bar</h2>
 
-  <label>
-    address:
-    <input type="text" name="address" />
-  </label>
+  <form action="/bars/new" method="POST" enctype="multipart/form-data">
+    <label>
+      <h6>Nom du bar :</h6>
+      <input type="text" name="name" />
+    </label>
+    
 
-  <label>
-    Minimum Cb:
-    <input type="number" name="minimumCb" />
-  </label>
+    <label>
+      <h6>Adresse du bar :</h6>
+      <input type="text" name="address" />
+    </label>
 
-  <input id="imageUrl" name="image" type="file">
+    <label>
+      <h6>Minimum pour payer en CB :</h6>
+      <input type="number" name="minimumCb" />
+    </label>
 
-  <button>Create</button>
-</form>
+    <input type="file" name="image" id="imageUrl" class="inputfile" />
+    <label for="imageUrl">Choisir une photo</label>
+    <img id="photo" src="#" alt="Ton image" width="300" style="margin-bottom: 24px; display:none;"/>
 
-{{#if errorMessage}}
-  <p class="error">{{errorMessage}}</p>
-{{/if}}
+    <button class="btn btn-green">Enregistrer</button>
+  </form>
+
+  {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+  {{/if}}
+</section>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      
+      reader.onload = function(e) {
+        $('#photo').attr('src', e.target.result);
+      }
+      
+      reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+  }
+
+  $("#imageUrl").change(function() {
+    $('#photo').css( "display", "block" );
+    readURL(this);
+  });
+</script>
