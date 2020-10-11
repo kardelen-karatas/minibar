@@ -83,12 +83,21 @@ router.post('/login', (req, res, next) => {
 });
 
 router.get('/userProfile', (req, res) => {
+  const user_id = req.session.currentUser._id;
+  console.log(user_id);
 
-  Bar.find()
-  .limit(5)
+  Bar.find({user_id: mongoose.Types.ObjectId(`${user_id}`)})
   .then((allBarsFromDB) => {
 
-    res.render('users/user-profile', { userInSession: req.session.currentUser, bars : allBarsFromDB });
+    res.render('users/user-profile',
+    { 
+      userInSession: req.session.currentUser,
+      bars : allBarsFromDB,
+      addedBars: allBarsFromDB.length,
+      day: new Date(req.session.currentUser.createdAt).getDay(),
+      month: new Date(req.session.currentUser.createdAt).getMonth(),
+      year: new Date(req.session.currentUser.createdAt).getYear()
+    });
   })
   .catch((error) => {
     console.log("Error while getting the bars from the DB: ", error);

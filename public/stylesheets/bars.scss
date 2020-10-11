@@ -1,29 +1,30 @@
-h2 {
-  margin: 24px auto !important;
-  width: 1024px;
-  text-align: center;
-}
-
-.intro {
-  margin: 24px auto !important;
-  width: 1024px;
-  text-align: center;
-  background-color: #cdfef3;
-  border-radius: 10px;
-  padding: 32px;
-  position: relative;
-  opacity: 0.7;
-
-  svg {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-}
 
 #bar-index {
   display: flex;
   flex-direction: column;
+  
+  h2 {
+    margin: 24px auto !important;
+    width: 1024px;
+    text-align: center;
+  }
+  
+  .intro {
+    margin: 24px auto !important;
+    width: 1024px;
+    text-align: center;
+    background-color: #cdfef3;
+    border-radius: 10px;
+    padding: 32px;
+    position: relative;
+    opacity: 0.7;
+  
+    svg {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
   
   .bars {
     display: flex;
@@ -50,45 +51,45 @@ h2 {
           border-top-right-radius: 10px;
           width: 320px;
         }
+      }
+      
+      .infos {
+        padding: 24px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         
-        .infos {
-          padding: 24px;
-          position: relative;
+        .price {
+          position: absolute;
+          top: -39px;
+          right: 0;
+          background-color: white;
+          border-top-left-radius: 5px;
           display: flex;
-          align-items: center;
-          justify-content: space-between;
-          
-          .price {
-            position: absolute;
-            top: -39px;
-            right: 0;
-            background-color: white;
-            border-top-left-radius: 5px;
+
+          h5 {
+            margin: 8px;
+            font-weight: 600;
+          }
+
+          .vote {
             display: flex;
-  
-            h5 {
-              margin: 8px;
-              font-weight: 600;
-            }
-  
-            .vote {
+            margin-left: 16px;
+
+            div {
               display: flex;
-              margin-left: 16px;
-  
-              div {
-                display: flex;
-                width: fit-content;
-                align-items: center;
-                justify-content: space-between;
-  
-                p {
-                  margin: 8px;
-                }
-  
-                img {
-                  width: 16px;
-                  height: 16px;
-                }
+              width: fit-content;
+              align-items: center;
+              justify-content: space-between;
+
+              p {
+                margin: 8px;
+              }
+
+              img {
+                width: 16px;
+                height: 16px;
               }
             }
           }

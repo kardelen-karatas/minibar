@@ -1,33 +1,52 @@
 {{#if userInSession}}
   <section id="profile">
     <div class="profile-card">
-      <div class="id">
-        <img src="https://api.adorable.io/avatars/150/abott@adorable.png" alt="" class="avatar">
-        <h2>{{ userInSession.username }}</h2>
-      </div>
+      <img src="https://api.adorable.io/avatars/150/abott@adorable.png" alt="" class="avatar">
+      <h4>Bienvenue, {{ userInSession.username }} !</h4>
+      <p>Date d'inscription : {{day}}/{{month}}/{{year}}</p>
+      <p>Nombre de bars ajoutés : {{addedBars}}</p>
+      <p>Nombre de bars favoris : </p>
     </div>
 
     <div class="user-bars">
-        <h2>Mes bars préférés</h2>
-        {{#each bars}}
-          <div class="bar">
-            <img src="" alt="">
-            <p class="bar-name">{{name}}</p>
-            <p>{{address}}</p>
-          </div>
-        {{/each}}
+        <div class="title">
+          <h4>Les bars que j'ai ajoutés</h4>
+        </div>
+        <div class="added-bars">
+          {{#each bars}}
+            <div class="bar">
+              <a href="/bars/{{id}}">
+                <img src="{{imageURL}}" alt="">
+                <div class="infos">
+                  <h6>{{name}}</h6>
+                  <p>{{address}}</p>
+                  <p class="price">{{minimumCb}}€</p>
+                </div>
+              </a>
+            </div>
+          {{/each}}
+        </div>
     </div>
 
 
     <div class="user-favorite-bars">
-      <h2>Mes bars ajoutés</h2>
-      {{#each bars}}
-        <div class="bar">
-          <img src="" alt="">
-          <p class="bar-name">{{name}}</p>
-          <p>{{address}}</p>
+        <div class="title">
+          <h4>Mes bars favoris</h4>
         </div>
-      {{/each}}
+        <div class="added-bars">
+          {{#each favorites}}
+            <div class="bar">
+              <a href="/bars/{{id}}">
+                <img src="{{imageURL}}" alt="">
+                <div class="infos">
+                  <h6>{{name}}</h6>
+                  <p>{{address}}</p>
+                  <p class="price">{{minimumCb}}€</p>
+                </div>
+              </a>
+            </div>
+          {{/each}}
+        </div>
     </div>
   </section>
 {{else}}

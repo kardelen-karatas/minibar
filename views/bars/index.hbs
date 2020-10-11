@@ -1,16 +1,15 @@
-<h2>Tu cherches un bar ?</h2>
-{{#if userInSession}}
-{{else}}
-  <div class="intro">
-    <a href="#" class="close"><span class="iconify" data-inline="false" data-icon="clarity:close-line" style="font-size: 24px;"></span></a>
-    <h6>Si toi aussi, tu n'as jamais de liquide sur toi mais que tu vas quand même régulièrement dans des bars, restos, que sais-je... alors tu es au bon endroit.</h6>
-    <h6>Ici sont répertoriés de nombreux bars dans Paris avec le montant minimum qu'il faudra si tu veux utiliser une CB.</h6>
-    <h6>Si tes bars favoris ne sont pas dans cette liste, inscris-toi et rajoute-les 😉</h6>
-    <h6>Bonne soirée !</h6>
-  </div>
-{{/if}}
-
 <section id="bar-index">
+  <h2>Tu cherches un bar ?</h2>
+  {{#if userInSession}}
+  {{else}}
+    <div class="intro">
+      <a href="#" class="close"><span class="iconify" data-inline="false" data-icon="clarity:close-line" style="font-size: 24px;"></span></a>
+      <h6>Si toi aussi, tu n'as jamais de liquide sur toi mais que tu vas quand même régulièrement dans des bars, restos, que sais-je... alors tu es au bon endroit.</h6>
+      <h6>Ici sont répertoriés de nombreux bar dans Paris avec le montant minimum qu'il faudra si tu veux utiliser une CB.</h6>
+      <h6>Si tes bars favoris ne sont pas dans cette liste, inscris-toi et rajoute-les 😉</h6>
+      <h6>Bonne soirée !</h6>
+    </div>
+  {{/if}}
   <form action="/bars" method="GET">
     <input type="text" name="query" placeholder="Rechercher un bar">
     <button type="submit" class="btn btn-green"><span class="iconify" data-inline="false" data-icon="ant-design:search-outlined" style="font-size: 24px;"></span>
@@ -27,29 +26,29 @@
       <div class="bar">
         <a href="/bars/{{id}}">
           <img src="{{imageURL}}" alt="" class="bg">
-          <div class="infos">
-            <div class="name">
-              <h4>{{name}}</h4>
-              <p>{{address}}</p>
-            </div>
-            <div class="favorite">
-              <span class="iconify" data-inline="false" data-icon="ant-design:heart-outlined" style="font-size: 24px;"></span>
-            </div>
-            <div class="price">
-              <h5>{{minimumCb}}€</h5>
-              <div class="vote">
-                <div class="up">
-                  <img src="/images/up.png" alt="">
-                  <p>7</p>
-                </div>
-                <div class="down">
-                  <img src="/images/down.png" alt="">
-                  <p>2</p>
-                </div>
+        </a>
+        <div class="infos">
+          <div class="name">
+            <h4>{{name}}</h4>
+            <p>{{address}}</p>
+          </div>
+          <div class="favorite">
+            <span class="iconify" data-inline="false" data-icon="ant-design:heart-outlined" style="font-size: 24px;"></span>
+          </div>
+          <div class="price">
+            <h5>{{minimumCb}}€</h5>
+            <div class="vote">
+              <div class="up">
+                <img src="/images/up.png" alt="">
+                <p>7</p>
+              </div>
+              <div class="down">
+                <img src="/images/down.png" alt="">
+                <p>2</p>
               </div>
             </div>
           </div>
-        </a>
+        </div>
       </div>
     {{/each}}
   </div>
@@ -59,10 +58,16 @@
 <script>
   const close = document.querySelector('.close');
   const intro = document.querySelector('.intro');
-
   if (intro) {
     close.addEventListener('click', () => {
       intro.style.display = 'none';
     });
   }
+
+  const favorites = document.querySelectorAll('.favorite');
+  favorites.forEach((favorite) => {
+    favorite.addEventListener('click', () => {
+      favorite.children[0].style.color = 'red';
+    })
+  });
 </script>
