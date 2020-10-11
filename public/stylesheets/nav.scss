@@ -1,16 +1,29 @@
 nav {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: #cdfef3;
+  height: 72px;
+  justify-content: space-between;
   
   ul {
     display: flex;
     margin: 0;
+    align-items: center;
     
     li {
       list-style: none;
       margin: 8px;
     }
   }
+
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
+.sticky {
+  position: sticky;
+  top: -1px;
+  z-index: 2;
+  box-shadow: 0 4px 12px 0 rgba(0,0,0,.1);
 }

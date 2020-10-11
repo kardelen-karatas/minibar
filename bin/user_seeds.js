@@ -6,10 +6,10 @@ User.collection.drop();
 const dbtitle = 'minibar';
 mongoose.connect(`mongodb://localhost/${dbtitle}`, {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true})
   .then( db => {
-    console.log(`connected to mongo ${db}`)
+    console.log(`connected to mongo ${db}`);
   })
   .catch(err => {
-    console.log(`Connexion problem: ${err}`)
+    console.log(`Connexion problem: ${err}`);
   });
 
 const bcryptjs = require('bcryptjs');
@@ -33,14 +33,14 @@ const dataUser = [
     passwordHash: bcryptjs.hashSync("testpassword", salt)
 
   },
-]
+];
 
 
 User.insertMany(dataUser)
   .then( data => {
-    console.log("data inserted")
-    mongoose.connection.close()
+    console.log("data inserted");
+    mongoose.connection.close();
   })
   .catch(err => {
-    console.log(`Error: ${err}`)
-})
+    console.log(`Error: ${err}`);
+});

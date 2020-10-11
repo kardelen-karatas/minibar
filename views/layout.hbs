@@ -11,11 +11,16 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 </head>
 <body>
   {{> header}}
   {{{body}}}
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="/javascripts/script.js"></script>
+  <script src="/javascripts/bar-map.js"></script>
   <script>
     const header = document.querySelector('nav');
     if ((window.location.href).includes('/signup')) {
@@ -26,5 +31,11 @@
       header.style.display = 'flex';
     }
   </script>
+
+  <script>
+  // global `DATAS` variable pour la carte
+  window.WINDATAS = {{{json WINDATAS}}};
+  </script>
+
 </body>
 </html>

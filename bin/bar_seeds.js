@@ -21,24 +21,16 @@ User.find()
 .then(users => {
   // t: 2
   for (let user of users) {
-    user_list.push(user["_id"]);
+    user_list.push(user._id);
   }
 
   const dataBar = [
     {
       name: "Northern Bar",
       user_id: user_list[0],
-      address: "1 rue de voltaire, 75001 Paris",
+      address: "1 rue voltaire, 75001 Paris",
       minimumCb : 5,
       latlng: [0.0, 0.0],
-      imageURL: "https://images.unsplash.com/photo-1491333078588-55b6733c7de6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=320"
-    },
-    {
-      name: "Parisien Bar",
-      user_id: user_list[1],
-      address: "100 rue de colle bert, 92310 Sevres",
-      minimumCb : 15,
-      latlng: [1.0, 1.0],
       imageURL: "https://images.unsplash.com/photo-1491333078588-55b6733c7de6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=320"
     },
     {
@@ -52,25 +44,9 @@ User.find()
     {
       name: "Les Chavillois",
       user_id: user_list[1],
-      address: "96 avenue de roger salengro, 92370 Chaville",
+      address: "96 avenue roger salengro, 92370 Chaville",
       minimumCb : 25,
       latlng: [2.0, 2.0],
-      imageURL: "https://images.unsplash.com/photo-1491333078588-55b6733c7de6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=320"
-    },
-    {
-      name: "La garde de nuit",
-      user_id: user_list[2],
-      address: "23 rue d'aubergine, 75020 Paris",
-      minimumCb : 5,
-      latlng: [3.0, 3.0],
-      imageURL: "https://images.unsplash.com/photo-1491333078588-55b6733c7de6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=320"
-    },
-    {
-      name: "Soif",
-      user_id: user_list[2],
-      address: "68 rue de cougette, 75015 Paris",
-      minimumCb : 5,
-      latlng: [3.5, 3.5],
       imageURL: "https://images.unsplash.com/photo-1491333078588-55b6733c7de6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=eyJhcHBfaWQiOjF9&ixlib=rb-1.2.1&q=80&w=320"
     },
     {
