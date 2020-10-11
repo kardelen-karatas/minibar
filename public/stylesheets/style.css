@@ -385,6 +385,7 @@ nav {
     justify-content: space-between; }
   #bar-details img {
     height: 30vh;
+    width: 384px;
     margin-bottom: 32px;
     border-radius: 10px; }
   #bar-details h5 {

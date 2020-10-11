@@ -83,6 +83,10 @@ router.post('/login', (req, res, next) => {
 });
 
 router.get('/userProfile', (req, res) => {
+  if(!req.session.currentUser){
+    res.redirect('/login');
+  }
+  
   const user_id = req.session.currentUser._id;
   console.log(user_id);
 
