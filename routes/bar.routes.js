@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const router = express.Router();
-const hbs = require('hbs')
+const hbs = require('hbs');
 
 module.exports = router;
 
@@ -90,8 +90,7 @@ const { id } = req.params;
         WINDATAS: {
           bar:theBar
         }
-      })
-    
+      });
     })
     .catch((error) => {
       console.log("Error while retrieving bar details: ", error);

@@ -21,7 +21,7 @@ User.find()
 .then(users => {
   // t: 2
   for (let user of users) {
-    user_list.push(user["_id"]);
+    user_list.push(user._id);
   }
 
   const dataBar = [

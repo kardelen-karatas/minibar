@@ -1,4 +1,4 @@
-const bar = WINDATAS.bar
+const bar = WINDATAS.bar;
 
 var map = L.map('map').setView({lon: 2.349014, lat: 48.864716}, 15);
 
@@ -21,12 +21,12 @@ L.tileLayer('https://{s}.tile.jawg.io/jawg-matrix/{z}/{x}/{y}{r}.png?access-toke
 L.control.scale().addTo(map);
 
 
-console.log(bar.address)
-axios.get("https://nominatim.openstreetmap.org/", {params: {format:"json", addressdetails: "1", q: bar.address, format:"json", limit:"1"}})
+console.log(bar.address);
+axios.get("https://nominatim.openstreetmap.org/", {params: {format:"json", addressdetails: "1", q: bar.address, limit:"1"}})
 .then(response => {
   
-  const lon = response.data[0]["lon"]
-  const lat = response.data[0]["lat"]
+  const lon = response.data[0].lon;
+  const lat = response.data[0].lat;
   
   map.setView({lon: lon, lat: lat}, 18); 
 
@@ -37,7 +37,7 @@ axios.get("https://nominatim.openstreetmap.org/", {params: {format:"json", addre
   });
 
   var marker = L.marker({lon:lon, lat:lat}).addTo(map);
-  marker.setIcon(beerIcon)
+  marker.setIcon(beerIcon);
 })
 .catch(error => {
 
